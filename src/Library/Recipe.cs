@@ -33,6 +33,28 @@ namespace Full_GRASP_And_SOLID.Library
                 Console.WriteLine($"{step.Quantity} de '{step.Input.Description}' " +
                     $"usando '{step.Equipment.Description}' durante {step.Time}");
             }
-        }
-    }
+            Console.WriteLine($"El costo total es: {GetProductionCost()}");
+        } 
+        public double GetProductionCost()
+        {
+                //double insumos=this.unitCost;
+                //double equipm = this.hourlyCost;
+                //total = double insumos + double equipm;
+                double insumo = 0;
+                double cantidadproducto = 0;
+                double equipamiento = 0;
+                double tiempo = 0;
+                double total = 0;
+                foreach (Step step in steps)
+                {
+                    insumo += step.Quantity;
+                    cantidadproducto += step.Input.UnitCost;
+                    equipamiento += step.Equipment.HourlyCost;
+                    tiempo += step.Time;
+                    total += (insumo*cantidadproducto + equipamiento)/tiempo;
+                }
+                return total;
+
+            }   
+    }   
 }
