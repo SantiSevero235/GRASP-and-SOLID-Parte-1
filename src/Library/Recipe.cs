@@ -55,6 +55,8 @@ namespace Full_GRASP_And_SOLID.Library
                 }
                 return total;
 
-            }   
+            }   //Se utilizó el principio Expert, se asignó la responsabilidad al experto en información, 
+                //esta clase tiene la información necesaria para determinar el total de insumos,
+                //su costo por unidad, el costo por hora del equipamiento empleado y el tiempo de uso.
     }   
 }
